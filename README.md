@@ -166,3 +166,168 @@ Where n is the number of observations and k is the number of number of predictor
 
 
 
+Classification:
+
+when predicting a category, the models built are referred to as classification models. The category of a new instance must be predicted based on the existing data. This can be done by finding patterns in the available data and then making a prediction based on the observed patterns.
+The categories of the data instances are referred to as class labels or classes. The attribute that holds these categorical values is called the class label attribute. The class of a new instance can be predicted by studying the patterns in the previously processed data. The attributes that are used in order to predict the value of the class label attribute are called the predictor attributes. 
+Finally, the entire task of prediction of classes of new instances is termed as classification. 
+For the purpose of classification one needs to move from historical data to a general model, known as the classifier. This classifier can be arrived at by analyzing patterns in the historical data, so as to classify new instances.
+
+
+Logistic Regression:
+
+The logistic regression model is given as  ![](images/Log_reg1.PNG)
+
+The figure below illustrates the prediction range of [0,1] for the logistic regression model as compared to the prediction range of ![](images/LogReg2.PNG) , for the linear regression model.
+
+![](images/LogReg3.PNG)
+ 
+![](images/LogReg4.PNG)
+
+![](images/LogReg5.PNG)
+
+ 
+Anything below the halfway point (Depends on our selection) is projected onto y=0 i.e. category I and the points above are projected onto y=1 i.e. category II. That’s how classification happens.
+
+
+
+
+
+K-Nearest Neighbors (K-NN):
+
+
+ ![](images/KNN1.PNG)
+ 
+ ![](images/KNN2.PNG)
+ 
+ ![](images/KNN3.PNG)
+ 
+
+ 
+
+
+Support Vector Machine (SVM):
+In SVM, the linearly separable data is classified by the Maximum Margin Classifier which is drawn equidistant from the support vectors representing the two categories.
+
+![](images/SVM1.PNG)
+ 
+•	The Specialty of SVM model is its selection of Support vectors. 
+•	The support vectors represent the most extreme or deviating characteristics in their corresponding categories. So when we are predicting the new data, we are comparing its characteristics with the support vector characteristics which are extreme. Thus the classification turns out to be more accurate.
+•	This makes SVM model stand out from other classification models.
+
+
+
+
+Kernel SVM:
+•	When the data is not linearly separable, it becomes difficult to classify the data with a boundary as shown below:
+ 
+ ![](images/KSVM1.PNG)
+
+•	In such a case the Kernel SVM model maps the data to a higher dimension as shown :
+
+
+
+Mapping to Higher Dimension:
+•	Consider a random data in one dimension which is not linearly separable.
+
+![](images/KSVM2.PNG)
+ 
+•	After modifying the equation as f=x-5 and subsequently f=(x-5)^2, the data gets transformed to a higher dimension. Then the data can be linearly separable as shown.
+ 
+![](images/KSVM3.PNG)
+
+•	In the same way we can transform a 2-D data into 3-D data to separate the categories using the Mapping function by the kernel SVM model.
+
+![](images/KSVM4.PNG)
+
+ 
+•	Later when we project this back to 2-D, we get our Nonlinear separator which classifies the two categories.
+
+ ![](images/KSVM5.PNG)
+
+Disadvantages:
+•	Mapping to higher dimensions can be highly compute-intensive.
+•	The larger the dataset, the more is the processing power required.
+
+The Kernel Trick:
+In order to avoid the mapping to higher dimension we can use the kernel trick where we can use different types of kernels like Gaussian RBF kernel, Sigmoid Kernel, Polynomial Kernel etc.
+Let’s look into the Gaussian RBF Kernel.
+
+Gaussian RBF Kernel:
+
+![](images/KSVM6.PNG)
+
+K-->Kernel
+Li-->Landmark
+x-->random point
+
+
+•	When the random point X1 from the dataset is away from the landmark, then the exponential value converges to 0 and thus K=0.
+•	When the random point X2 from the dataset is close to the landmark, then the exponential value converges to 1 and thus attaining the highest peak point in the Kernel i.e., K=1.
+
+![](images/KSVM7.PNG)
+
+ 
+•	The Kernel SVM model will choose the optimum Landmark and sigma value using high level mathematics. 
+•	The sigma value represents the circumference around the landmark. As the sigma value increases/decreases, the circumference increases/decreases.
+•	If K>0 -->Green and if K=0 -->Red
+•	Thus the classification happens without mapping to higher dimensions. 
+
+Naïve Bayes:
+Bayes theorem:
+ 
+ ![](images/NB1.PNG)
+•	The formula can be better explained using an example:
+•	Consider two machines M1 & M2 which produce Spanners and the spanners produced are embossed with the machine from which they came.
+•	There are some defective spanners produced by both the machines. In order to find the probabilities of defective spanners from the machines we can use Bayes theorem as follows:
+
+![](images/NB2.PNG)
+
+ 
+Here,
+P(Defect|Mach2)-->Probability that a spanner produced by machine M2 is defective.
+P(Mach2|Defect)-->Probability of defective parts that are produced by machine M2.
+Therefore, the Bayes theorem is used to classify the new data into corresponding category based on the probabilities i.e.,
+•	Let A and B be two categories and X is the new data which needs to be categorized using our Naïve Bayes model.
+•	Firstly, we calculate the probabilities P(A|X) and P(B|X) where,
+
+P(A|X)-->probability that the new data point belongs to category A given the features X of the data.
+P(B|X)-->probability that the new data point belongs to category B given the features X of the data.
+•	Thus if P(A|X) > P(B|X), then the new data point belongs to category A and vice versa.
+
+Why Naïve?
+•	The algorithm is called naïve because of Independence Assumption.
+•	Bayes theorem depends on these assumptions which may be wrong. But we should be clever enough to assume them to be correct, hence it is called Naïve Bayes.
+
+
+
+
+Decision Tree Classification:
+
+ ![](images/DT1.PNG)
+
+Here we will see about classification trees in order to classify our data.
+•	The Decision Tree algorithm classifies the data using multiple splits as shown.
+ 
+ ![](images/DT2.PNG)
+ 
+ ![](images/DT3.PNG)
+ 
+•	Based on the data, the algorithm splits the data and consequently builds a tree which decides the category of the new data point based on the tree.
+•	This algorithm is old, simple and less powerful but is used along with other algorithms in useful applications like Facial Recognition, Kinect (Motion Sensing games).
+
+
+
+Random Forest Classification:
+
+Ensemble Learning:
+
+The technique of integrating multiple machine learning algorithms to form a new bigger algorithm to solve our problem is called Ensemble Learning.
+Random Forest algorithm is based on Ensemble learning where multiple Decision Trees are run on the data, making the algorithm very powerful and accurate.
+
+![](images/RF1.PNG)
+ 
+
+
+
+
