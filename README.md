@@ -54,6 +54,8 @@ Why Linear Algebra?
 *	Most of the complex science problems are converted into problems of vectors and matrices and then solved with linear models.
 *	In the world of data (especially, big data), linear algebra can be very handy to process huge chunks of data to accomplish many practical transformations such as graphical transformations, face morphing, object detection and tracking, audio and image compression, edge detection, blurring, and signal processing etc.
 
+
+
 Linear Algebra in Data Science
 ---
 *	In data science, while solving a given business problem, an appropriate statistical computing technique may be used.
@@ -61,11 +63,15 @@ Linear Algebra in Data Science
 *	Linear Algebra works as a computational engine for most of the data science problems because of its performance advantages over iterative methods.
 
 
+
+
 Machine Learning
 ===
 Field of study that gives computers the ability to learn without being explicitly programmed.
 
 ![](images/Types_Learning.PNG)
+
+
 
 Supervised Learning
 ---
@@ -78,12 +84,15 @@ This is called Supervised machine learning.
 
 ![](images/SupervisedLearning.PNG)
 
+
+
 Unsupervised Learning
 ---
 
 Step1: We fix some variables or parameters based on which the machine will arrange the given data.  
 Step 2: The machine labels unknown data based on the decided variables or parameters  
 This is called Unsupervised Machine learning. Sometimes it is also called a Clustering.  
+
 
 
 
@@ -99,6 +108,8 @@ Step 4: Iterate steps 2 and 3 till convergence.
 Examples of semi-supervised learning are text processing, video-indexing, bioinformatics, web page classification, news classification.
 
 
+
+
 Reinforcement Learning
 ---
 
@@ -107,8 +118,11 @@ Reinforcement Learning
 * Reinforcement learning is defined not by characterizing learning methods, but by characterizing a learning problem. Any method that is well suited to solving that problem, is considered a reinforcement learning method.  
 
 
+
+
 Supervised Learning
 ===
+
 Regression
 ---
 
@@ -154,6 +168,8 @@ The regression coefficients  ![](images/LR5.PNG)    can be interpreted as the ch
 
 
 
+
+
 Determining strength of linearity of predictors
 ---
 In a multiple regression model where two or more predictor variables are involved, it is possible that one predictor can be linearly predicted from the others, with a substantial degree of accuracy. In such a situation, the predictors are said to be highly correlated.  
@@ -161,6 +177,8 @@ In statistics, this phenomenon is called multicollinearity, or in other words co
 Due to collinearity, the coefficient estimates of the multiple regression may change erratically in response to small changes in the model or the data. But, for a linear regression model to be valid it is essential that the predictors of the model be linearly independent of each other.  
 The variables are suggested to be linearly dependent if the correlation values are close to 1.   
 Hence, to determine the strength of linear relationship between the variables, correlation can be used.
+
+
 
 
 Variable Inflation Factor
@@ -173,6 +191,9 @@ VIF is given as,
  
 where, tolerance given as Tol(Xi)= 1-Ri^2  , represents the unexplained portion of the model and Ri^2 is the coefficient of determination when ith  independent variable is predicted by the other independent variables in the model.  
 For VIF values greater than 10 or for tolerance values less than 0.1 there seems to exist a collinearity problem.
+
+
+
 
 
 Adjusted R-squared
@@ -196,8 +217,13 @@ The categories of the data instances are referred to as class labels or classes.
 Finally, the entire task of prediction of classes of new instances is termed as classification.   
 For the purpose of classification one needs to move from historical data to a general model, known as the classifier. This classifier can be arrived at by analyzing patterns in the historical data, so as to classify new instances.  
 
+
+
+
 Classification Algorithms
 ===
+
+
 Logistic Regression
 ---
 
@@ -218,6 +244,8 @@ Anything below the halfway point (Depends on our selection) is projected onto y=
 
 
 
+
+
 K-Nearest Neighbors (K-NN)
 ---
 
@@ -230,6 +258,8 @@ K-Nearest Neighbors (K-NN)
  
 
  
+
+
 
 
 Support Vector Machine (SVM)
@@ -245,6 +275,8 @@ In SVM, the linearly separable data is classified by the Maximum Margin Classifi
 
 
 
+
+
 Kernel SVM
 ---
 *	When the data is not linearly separable, it becomes difficult to classify the data with a boundary as shown below:
@@ -252,6 +284,8 @@ Kernel SVM
  ![](images/KSVM1.PNG)
 
 *	In such a case the Kernel SVM model maps the data to a higher dimension as shown :
+
+
 
 
 
@@ -274,13 +308,19 @@ Mapping to Higher Dimension
 
  ![](images/KSVM5.PNG)
 
+
+
 **Disadvantages**  
 *	Mapping to higher dimensions can be highly compute-intensive.
 *	The larger the dataset, the more is the processing power required.
 
+
+
 **The Kernel Trick**  
 In order to avoid the mapping to higher dimension we can use the kernel trick where we can use different types of kernels like Gaussian RBF kernel, Sigmoid Kernel, Polynomial Kernel etc.  
 Let’s look into the Gaussian RBF Kernel.
+
+
 
 **Gaussian RBF Kernel**
 
@@ -302,8 +342,11 @@ x-->random point
 *	If K>0 -->Green and if K=0 -->Red
 *	Thus the classification happens without mapping to higher dimensions. 
 
+
+
 Naïve Bayes
 ---
+
 **Bayes theorem**
  
  ![](images/NB1.PNG)
@@ -325,9 +368,12 @@ P(A|X)-->probability that the new data point belongs to category A given the fea
 P(B|X)-->probability that the new data point belongs to category B given the features X of the data.  
 *	Thus if P(A|X) > P(B|X), then the new data point belongs to category A and vice versa.
 
+
 **Why Naïve?**  
 *	The algorithm is called naïve because of Independence Assumption.
 *	Bayes theorem depends on these assumptions which may be wrong. But we should be clever enough to assume them to be correct, hence it is called Naïve Bayes.
+
+
 
 
 
@@ -346,6 +392,8 @@ Here we will see about classification trees in order to classify our data.
  
 *	Based on the data, the algorithm splits the data and consequently builds a tree which decides the category of the new data point based on the tree.
 *	This algorithm is old, simple and less powerful but is used along with other algorithms in useful applications like Facial Recognition, Kinect (Motion Sensing games).
+
+
 
 
 
