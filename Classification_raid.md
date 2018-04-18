@@ -1,4 +1,4 @@
-Classification Models
+Classification Models on Social_Network_Ads.csv dataset
 ===
 
 **Business problem**: The data given is of the users in a social network database. The social network has a number of clients among which a client has launched  a brand new Luxury SUV at a ridiculously low price and placed an advertisement in the social network. So the client wants to know about the users who showed interest on the advertisement and subsequently bought the car.
