@@ -405,8 +405,58 @@ Random Forest Classification
 The technique of integrating multiple machine learning algorithms to form a new bigger algorithm to solve our problem is called Ensemble Learning.
 Random Forest algorithm is based on Ensemble learning where multiple Decision Trees are run on the data, making the algorithm very powerful and accurate.
 
-![](images/RF1.PNG)
+![](images/RF1.PNG)  
+  
+    
+      
+        
+          
+             
+Natural Language Processing (NLP)
+===
+Natural Language Processing (or NLP) is applying Machine Learning models to text and language. Teaching machines to understand what is said in spoken and written word is the focus of Natural Language Processing. Whenever we dictate something into our iPhone / Android device that is then converted to text, that’s an NLP algorithm in action.  
+
+We can also use NLP on a text review to predict if the review is a good one or a bad one. We can use NLP on an article to predict some categories of the articles we are trying to segment. We can use NLP on a book to predict the genre of the book. And it can go further, we can use NLP to build a machine translator or a speech recognition system, and in that last example we use classification algorithms to classify language.  
+
+Speaking of classification algorithms, most of NLP algorithms are classification models, and they include Logistic Regression, Naive Bayes, CART which is a model based on decision trees, Maximum Entropy again related to Decision Trees, Hidden Markov Models which are models based on Markov processes.  
+
+A very well-known model in NLP is the Bag of Words model. It is a model used to preprocess the texts to classify before fitting the classification algorithms on the observations containing the texts.  
+
+
+Steps in NLP
+---
+Cleaning of Text
+---
+* While performing NLP delimiter (Column separator) is very important to distinguish between the text and the columns. 
+
+* In NLP, we use .tsv files instead of .csv files as the delimiter in .csv is comma whereas it is a Tab space in .tsv file. 
+
+* While cleaning the texts, firstly we need to remove unwanted text like the numbers, punctuations etc. which do not contribute to our analysis.
+
+* Secondly, all the characters in the text should be transformed into lowercase letters.
+
+* In the next step, we should remove all non-significant words like prepositions, articles etc. which do not have any significance in determining whether the review is positive or negative.
+* We have a list of non significant words as a list called 'stopwords'  in NLTK library and can be downloaded. Using this list we can remove the non significant words from our review text.
+* Stemming is the next step where only the root words are retained in our text. This is done to avoid different versions of the same root word thus reducing the sparsity of the matrix.
+* Now the separated words are rejoined to form a string of words as in review text.
+
+
+Creating Bag of Words Model
+---
+**Bag of Words**: Is a model in which every word in our cleaned text corresponds to column. A sparse matrix is created such that the cell is a 1 if the corresponding word is present in our cleaned text. Therefore the matrix consists a lot of 0's and hence called a sparse matrix.
+* Using the CountVectorizer class we can create the sparse matrix. This process is called Tokenization.
+* Using the max_features parameter we can decide on the number of features ie., columns by removing the irrelevant columns(words) which appear very rarely.
+* Next, include our dependent variable ie., review (positive or negative) as a new column.
+
+As final step we apply Machine learning models onto this Bag of Words model to train our NLP model and later for accurate predictions.  
+
+
+
+
+
  
+
+
 
 
 
